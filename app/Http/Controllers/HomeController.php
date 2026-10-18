@@ -4,14 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class QuestionController extends Controller
+class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $data = [
+	      'username'        => 'Heroku',
+	      'last_login'      => date('Y-m-d H:i:s'),
+	      'list_pendidikan' => ['SD', 'SMP', 'SMA', 'S1', 'S2', 'S3']
+	  ];
+	  return view('home', $data);
     }
 
     /**
@@ -27,13 +32,7 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
-
-        $data['nama']       = $request->nama;
-        $data['email']      = $request->email;
-        $data['pertanyaan'] = $request->pertanyaan;
-
-        return view('home-question-respon', $data);
+        //
     }
 
     /**
