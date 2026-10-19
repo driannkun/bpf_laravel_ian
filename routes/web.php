@@ -29,7 +29,7 @@ Route::get('/mahasiswa', function () {
   return 'Halo Mahasiswa';
 })->name('mahasiswa.show');
 
-Route::get('/mahasiswa/{param1}', 
+Route::get('/mahasiswa/{param1}',
 [MahasiswaController::class, 'show']);
 
 Route::get('/about', function () {
@@ -41,3 +41,7 @@ route::get('/home', [HomeController::class, 'index']);
 use App\Http\Controllers\QuestionController;
 Route::post('question/store', [QuestionController::class, 'store'])
 		->name('question.store');
+
+use App\Http\Controllers\DashboardController;
+Route::get('dashboard', [DashboardController::class, 'index'])
+        ->name('dashboard');
